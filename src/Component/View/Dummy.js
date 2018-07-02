@@ -4,7 +4,9 @@ import React from 'react'
 export default ({
   dummy,
 }) =>
-  console.log(dummy) ||
-  dummy
-    ? "Dummy is ON"
-    : "Dummy is OFF"
+  <p>
+    {dummy
+      ? "fetching httpbin"
+      : "finished fetching httpbin"
+    }
+  </p>

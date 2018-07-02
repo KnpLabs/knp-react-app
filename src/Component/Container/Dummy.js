@@ -10,24 +10,26 @@ import {
   componentDidMount,
   componentWillUnmount,
 } from 'react-functional-lifecycle'
-import { on, off } from '../../Redux/Module/Dummy'
+import { fetch, clean } from '../../Redux/Module/Dummy'
 import Dummy from '../View/Dummy'
 
 const mapStateToProps = state => ({
-  dummy: state.dummy,
+  toggled: state.dummy.toggler,
+  payload: state.payload,
+  isFetching: state.isFetching,
 })
 
 const mapDispatchToProps = dispatch => ({
-  on: compose(dispatch, on),
-  off: compose(dispatch, off),
+  fetch: compose(dispatch, fetch),
+  cleanState: compose(dispatch, clean),
 })
 
 const onMount = pipe(
-  tap(compose(call, prop('on'))),
+  tap(compose(call, prop('fetch'))),
 )
 
 const onUnmount = pipe(
-  tap(compose(call, prop('off'))),
+  tap(compose(call, prop('cleanState'))),
 )
 
 export default connect(

@@ -2,26 +2,42 @@ import { always } from 'ramda'
 import { createReducer } from '../../Util'
 
 // INITIAL_STATE :: Boolean
-export const INITIAL_STATE = false
-
-// ON :: String
-export const ON = '@<project name>/Dummy/ON'
-
-// OFF :: String
-export const OFF = '@<project name>/Dummy/OFF'
-
-// on :: () -> Redux.Action ON
-export const on = () => ({
-  type: ON,
+export const INITIAL_STATE = ({
+  isFetching: false,
+  payload: {},
 })
 
-// on :: () -> Redux.Action OFF
-export const off = () => ({
-  type: OFF,
+// FETCH :: String
+export const FETCH = '@<project name>/Dummy/FETCH'
+
+// FETCHED :: String
+export const FETCHED = '@<project name>/Dummy/FETCHED'
+//
+// FETCHED :: String
+export const CLEAN = '@<project name>/Dummy/CLEAN'
+
+// fetch :: () -> Redux.Action FETCH
+export const fetch = always({ type: FETCH })
+
+// fetched :: () -> Redux.Action FETCHED
+export const fetched = payload => ({
+  type: FETCHED,
+  payload,
 })
+
+// clean :: () -> Redux.Action CLEAN
+export const clean = always({ type: CLEAN })
 
 // Dummy :: (Redux.State, Redux.Action *) -> State
 export default createReducer(INITIAL_STATE, {
-  [ON]: always(true),
-  [OFF]: always(false),
+  [FETCH]: state => ({
+    ...state,
+    isFetching: true,
+  }),
+  [FETCHED]: (state, {payload}) => ({
+    ...state,
+    isFetching: false,
+    payload,
+  }),
+  [CLEAN]: always(INITIAL_STATE),
 })
