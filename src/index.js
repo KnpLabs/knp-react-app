@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './Style/Main.css';
 import App from './Component/App';
 import registerServiceWorker from './ServiceWorker';
 import { applyMiddleware } from 'redux'

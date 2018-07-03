@@ -7,7 +7,7 @@ export default ({
   isGenerating = false,
 }) =>
   isGenerating || !image
-    ? <div className="loader">We are loading your dog ...</div>
+    ? <div className="dog loader">We are loading your dog ...</div>
     : <div className="dog">
           <img className="dog-image" src={image.src} alt={image.alt} />
           <button className="dog-generate" onClick={generateRandomDog}>Generate Dog</button>
