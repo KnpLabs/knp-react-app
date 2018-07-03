@@ -2,10 +2,14 @@
   "name": "knp-react-app",
   "version": "0.1.0",
   "dependencies": {
+    "autoprefixer": "^8.6.4",
     "crocks": "^0.9.4",
+    "node-sass-chokidar": "^1.3.0",
+    "npm-run-all": "^4.1.3",
     "ramda": "^0.25.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-functional-lifecycle": "^3.0.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
@@ -13,8 +17,13 @@
     "rxjs": "^6.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm-run-all -p watch-css start-js",
+    "start-js": "react-scripts start",
+    "build-css": "node-sass-chokidar --include-path ./node_modules src/ -o src/",
+    "build-autoprefixed-css": "postcss build/static/css/*.css --replace --use autoprefixer --verbose",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js build-autoprefixed-css",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

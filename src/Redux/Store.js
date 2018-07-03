@@ -1,5 +1,5 @@
 import { uncurryN } from 'ramda'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
 import { pipe, __, tap } from 'ramda'
 
