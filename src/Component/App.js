@@ -1,13 +1,13 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import Dummy from './Container/Dummy'
+import Dog from './Container/Dog'
 
 export default ({
-  store,
-}) =>
+  store, }) =>
   <Provider store={store}>
     <div>
-      <h1>Hello, World!</h1>
-      <Dummy />
+      <h1>Welcome</h1>
+      <p>This is a standard page</p>
+      <Dog />
     </div>
   </Provider>
