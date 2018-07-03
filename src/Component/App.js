@@ -3,11 +3,12 @@ import { Provider } from 'react-redux'
 import Dog from './Container/Dog'
 
 export default ({
-  store, }) =>
+  store,
+}) =>
   <Provider store={store}>
     <div>
       <h1>Welcome</h1>
-      <p>This is a standard page</p>
+      <p>This is a simple Dog fetcher app bootstrapped with knp-react-app</p>
       <Dog />
     </div>
   </Provider>

@@ -7,7 +7,7 @@ import { applyMiddleware } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
 import { Store } from './Redux/Store'
 import rootEpic from './Epic'
-import reducer from './Redux/State'
+import { default as mainReducer, debug } from './Redux/State'
 
 const epicMiddleware = createEpicMiddleware({
   dependencies: {
@@ -15,7 +15,10 @@ const epicMiddleware = createEpicMiddleware({
   },
 });
 const middleware     = applyMiddleware(epicMiddleware);
-const store          = Store(reducer(), middleware, reducer)
+const reducer        = process.env.REACT_APP_DEBUG
+  ? debug(mainReducer)
+  : mainReducer;
+const store          = Store(reducer(), middleware, reducer);
 
 epicMiddleware.run(rootEpic);
 

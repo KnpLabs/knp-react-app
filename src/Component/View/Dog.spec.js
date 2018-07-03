@@ -8,13 +8,13 @@ describe('Component :: View :: Dog', () => {
       <Dog />
     );
 
-    inspector.root.findByProps({ className: 'loader' })
+    inspector.root.findByProps({ className: 'dog loader' })
 
     const inspector2 = TestRenderer.create(
       <Dog isGenerating={true} image={{src: 'foo', alt: 'bar'}} />
     );
 
-    inspector.root.findByProps({ className: 'loader' })
+    inspector.root.findByProps({ className: 'dog loader' })
   });
 
   it('displays the image and a generation button when it is not generating any image', () => {
