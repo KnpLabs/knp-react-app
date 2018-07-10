@@ -11,7 +11,7 @@ import { default as mainReducer, debug } from './Redux/State'
 
 const epicMiddleware = createEpicMiddleware({
   dependencies: {
-    fetchDog: () => fetch('https://dog.ceo/api/breeds/image/random')
+    fetchDog: () => fetch('https://dog.ceo/api/breeds/image/random'),
   },
 });
 const middleware     = applyMiddleware(epicMiddleware);

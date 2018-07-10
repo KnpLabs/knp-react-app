@@ -2,7 +2,7 @@ import Dog from './Dog'
 import { tap, pipe } from 'ramda'
 import { combineReducers } from 'redux'
 
-// debug :: ((State, Action *) -> State) -> -> State -> Action * -> State
+// debug :: ((State, Action *) -> State) -> State -> Action * -> State
 export const debug = reducer => (state = reducer(), action = {}) => pipe(
   tap(() => console.log(':: DEBUG ::')),
   tap(({ type }) => console.log(`Action :: ${type || 'NONE'}`)),

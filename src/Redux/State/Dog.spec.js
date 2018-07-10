@@ -1,13 +1,13 @@
 import * as Dog from './Dog'
 
 describe('Redux :: Module :: Dog', () => {
-  it('reduce to initial state', () => {
+  it('reduces to initial state', () => {
     const state = Dog.default()
 
     expect(state).toEqual(Dog.INITIAL_STATE);
   });
 
-  it('reduce the generate dog action', () => {
+  it('reduces the generate dog action', () => {
     const s1     = Dog.default();
     const action = Dog.generateDog();
     const s2     = Dog.default(s1, action);
@@ -17,7 +17,7 @@ describe('Redux :: Module :: Dog', () => {
     expect(s2.isGenerating).toBe(true);
   });
 
-  it('reduce receive dig action', () => {
+  it('reduces receive dig action', () => {
     const s1       = Dog.default();
     const generate = Dog.generateDog();
     const s2       = Dog.default(s1, generate);
