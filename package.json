@@ -26,5 +26,8 @@
     "build": "npm-run-all build-css build-js build-autoprefixed-css",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-test-renderer": "^16.4.1"
   }
 }
