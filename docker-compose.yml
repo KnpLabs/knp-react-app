@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  app:
+    image: node:10.10.0-alpine
+    command: npm run start
+    volumes:
+      - './:/app'
+    working_dir: /app
+    user: node
+    ports:
+      - "3000:3000"
