@@ -19,7 +19,7 @@ $ yarn install
 This bootstrapper is based on top of
 [React Create App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 Please follow this complete guide before posting any issue on this repository.
-In fact it does nothing except to clean up some code and propose a default
+In fact it does nothing except cleaning up some code and propose a default
 architecture.
 
 ## Documentation
