@@ -28,6 +28,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "postcss-cli": "^6.0.0",
     "react-test-renderer": "^16.4.1"
   }
 }
