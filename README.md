@@ -6,12 +6,21 @@ project could be a good start.
 
 ## Installation
 
-Just clone this repository and install dependencies:
+Requires the latest version of :
+- docker-ce
+- docker-compose
 
-```
+Just clone this repository and install its dependencies:
+
+```bash
 $ git clone git@github.com:KnpLabs/knp-react-app.git myApp
 $ cd myApp
-$ yarn install
+$ make install-deps
+```
+
+Then, run it with
+```bash
+$ make start
 ```
 
 ## What is inside ?
@@ -43,3 +52,8 @@ architecture.
 ### Tests
 - [Jest](https://jestjs.io/)
 - [Test Renderer](https://reactjs.org/docs/test-renderer.html)
+
+To run the tests :
+```bash
+$ make test
+```
