@@ -9,6 +9,6 @@ export default ({
   isGenerating || !image
     ? <div className="dog loader">We are loading your dog ...</div>
     : <div className="dog">
-          <img className="dog-image" src={image.src} alt={image.alt} />
-          <button className="dog-generate" onClick={generateRandomDog}>Generate Dog</button>
+        <img className="dog-image" src={image.src} alt={image.alt} />
+        <button className="dog-generate" onClick={generateRandomDog}>Generate Dog</button>
       </div>
