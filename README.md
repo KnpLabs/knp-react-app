@@ -18,6 +18,11 @@ $ cd myApp
 $ make install-deps
 ```
 
+Create a local copy of the env file:
+```bash
+$ cp .env.dist .env
+```
+
 Then, run it with
 ```bash
 $ make start
