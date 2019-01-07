@@ -14,7 +14,7 @@ const epicMiddleware = createEpicMiddleware({
   },
 });
 const middleware     = applyMiddleware(epicMiddleware);
-const reducer        = process.env.REACT_APP_DEBUG
+const reducer        = process.env.REACT_APP_DEBUG_STATE
   ? debug(mainReducer)
   : mainReducer;
 const store          = createStore(reducer, reducer(), middleware);
