@@ -2,7 +2,7 @@ import React from 'react'
 import Dog from './Dog'
 import TestRenderer from 'react-test-renderer'
 
-describe('Component :: View :: Dog', () => {
+describe('Component :: Dog :: Dog', () => {
   it('loads when no dog image is present or is generating', () => {
     const inspector = TestRenderer.create(
       <Dog />
