@@ -23,6 +23,8 @@ Then, run it with
 $ make start
 ```
 
+and browse [http://localhost:3000/](http://localhost:3000/).
+
 ## What is inside ?
 
 This bootstrapper is based on top of

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import Dog from './Container/Dog'
+import Dog from './Dog'
 
 export default ({
   store,

@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import { generateDog } from '../../Redux/State/Dog'
 import { componentDidMount } from 'react-functional-lifecycle'
 import { compose } from 'ramda'
-import Dog from '../View/Dog'
+import Dog from './Dog'
 
 // mapStateToProps :: State -> Props
 const mapStateToProps = state => ({
