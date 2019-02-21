@@ -1,7 +1,7 @@
 # KNP React App
 
-This is a bootstraped ready application for your React. If you are looking
-for a Javascript FP starting point in your frontend application, this
+This is a bootstrapped React application. If you are looking
+for a Javascript FP starting point for your frontend application, this
 project could be a good start.
 
 ## Installation
@@ -59,3 +59,7 @@ To run the tests :
 ```bash
 $ make test
 ```
+
+### Useful resources
+
+- [Split JS bundle in chunks](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
