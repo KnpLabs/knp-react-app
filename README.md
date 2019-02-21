@@ -15,7 +15,7 @@ Just clone this repository and install its dependencies:
 ```bash
 $ git clone git@github.com:KnpLabs/knp-react-app.git myApp
 $ cd myApp
-$ make install-deps
+$ make .env install-deps
 ```
 
 Then, run it with
