@@ -15,7 +15,7 @@
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "react-scripts start",
     "build-css": "node-sass-chokidar --include-path ./node_modules src/ -o src/",
-    "build-autoprefixed-css": "postcss build/static/css/*.css --replace --use autoprefixer --verbose",
+    "build-autoprefixed-css": "postcss build/static/css/*.css --replace --use autoprefixer --verbose --map false",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./node_modules src/ -o src/ --watch --recursive",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js build-autoprefixed-css",
