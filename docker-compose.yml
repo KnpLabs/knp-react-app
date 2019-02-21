@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   app:
-    image: node:10.10.0-alpine
+    image: node:11.10.0-alpine
     command: npm run start
     volumes:
       - './:/app'

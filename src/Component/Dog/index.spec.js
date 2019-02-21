@@ -14,7 +14,7 @@ describe('Component :: Dog :: index', () => {
   });
 
   it('fetches a dog when mount and displays it when receive a dog', () => {
-    TestRenderer.create(createElement(store, Dog));
+    const inspector = TestRenderer.create(createElement(store, Dog));
 
     expect(store.getState().Dog.isGenerating).toBe(true);
 
@@ -22,7 +22,7 @@ describe('Component :: Dog :: index', () => {
 
     expect(store.getState().Dog.isGenerating).toBe(false);
 
-    const inspector = TestRenderer.create(createElement(store, Dog));
+    inspector.update(createElement(store, Dog))
 
     inspector.root.findByProps({ className: 'dog' });
   });
