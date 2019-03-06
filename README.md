@@ -63,3 +63,8 @@ $ make test
 ### Useful resources
 
 - [Split JS bundle in chunks](https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html)
+- Polyfills : specify which polyfills you need on
+[polyfill.io](https://polyfill.io/v3/url-builder)
+and add the given `script` tag in the `head` tag of the
+[`public/index.html`](/public/index.html) file to automatically import the
+polyfills required by the browser (determined by user agent).
