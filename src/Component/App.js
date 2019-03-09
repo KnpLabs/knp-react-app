@@ -63,6 +63,17 @@ export default () =>
       <Item>
         <Label
           target="_blank"
+          href="https://github.com/Djeg/ramduck-redux#readme"
+        >
+          Ramduck Redux
+        </Label>
+        This is one of our handy tool making reducers and actions very powerfull. It simplyfies
+        and currify your reducers and actions, making your code very consice and easilty testable.
+      </Item>
+
+      <Item>
+        <Label
+          target="_blank"
           href="https://redux-observable.js.org/"
         >
           Redux Observable

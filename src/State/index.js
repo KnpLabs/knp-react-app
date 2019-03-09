@@ -1,6 +1,11 @@
+import { combine, init } from 'ramduck-redux'
+
+
 // initialState :: State
-export const initialState = null
+export const initialState = {}
 
 
 // State :: (State, Action) -> State
-export default (state, action) => initialState
+export default combine(
+  init(initialState),
+)
