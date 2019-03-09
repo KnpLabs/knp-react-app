@@ -42,6 +42,17 @@ export default () =>
       <Item>
         <Label
           target="_blank"
+          href="https://reacttraining.com/react-router/web/guides/quick-start"
+        >
+          React Router
+        </Label>
+        Any web application need some routing, allowing people to navigate into your app.
+        React Router is the most popular routing tools for react.
+      </Item>
+
+      <Item>
+        <Label
+          target="_blank"
           href="https://redux.js.org/"
         >
           Redux
