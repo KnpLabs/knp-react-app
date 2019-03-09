@@ -1,4 +1,4 @@
-import App, { Item, Title } from './App'
+import App, { Item, Thumbnail, Title } from './App'
 import React from 'react'
 import TestRenderer from 'react-test-renderer'
 
@@ -13,6 +13,13 @@ beforeEach(() => {
 
 it('display the title', () => {
   expect(inspector.root.findByType(Title).props.children).toEqual('Welcome')
+});
+
+
+it('display some quick access link', () => {
+  const items = inspector.root.findAllByType(Thumbnail)
+
+  expect(items.length).toBe(4)
 });
 
 
