@@ -1,5 +1,5 @@
 .PHONY:
-install-deps:
+install:
 	docker-compose run --rm app yarn install
 
 .PHONY:
