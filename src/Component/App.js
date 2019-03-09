@@ -98,14 +98,14 @@ export default () =>
   </div>
 
 
-const Title = styled.h1`
+export const Title = styled.h1`
   text-align: center;
   color: #737373;
   font-size: 3rem;
 `
 
 
-const SubTitle = styled.p`
+export const SubTitle = styled.p`
   text-align: center;
   color: #737373;
   font-size: 1.2rem;
@@ -115,14 +115,14 @@ const SubTitle = styled.p`
 `
 
 
-const Menu = styled.ul`
+export const Menu = styled.ul`
   list-style-type: none;
   max-width: 700px;
   margin: 1.5rem auto;
   padding: 0;
 `
 
-const Item = styled.li`
+export const Item = styled.li`
   color: #737373;
   text-align: center;
   border-top: 1px solid #DDDDDD;
@@ -136,13 +136,13 @@ const Item = styled.li`
 `
 
 
-const Link = styled.a`
+export const Link = styled.a`
   color: #7271C8;
   text-decoration: none;
 `
 
 
-const Label = styled(Link)`
+export const Label = styled(Link)`
   display: block;
   text-align: center;
   margin-bottom: .5rem;
