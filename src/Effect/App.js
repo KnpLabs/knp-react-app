@@ -1,8 +1,8 @@
 import { applyMiddleware, createStore } from 'redux'
 import { combineEpics, createEpicMiddleware } from 'redux-observable'
-import { pipe, uncurryN } from 'ramda'
-import { prop, option, tryCatch, chain } from 'crocks'
+import { compose, flip, uncurryN } from 'ramda'
 import { render } from 'react-dom'
+import { tryCatch, chain } from 'crocks'
 import App from '../Component/App'
 import React from 'react'
 import rootReducer from '../State'
@@ -12,21 +12,10 @@ import rootReducer from '../State'
 export const rootEpic = combineEpics()
 
 
-// readEnv :: forall a. String -> Maybe a
-export const readEnv = name => prop(name, process.env)
-
-
-// readEnvOr :: forall a. a -> String -> Maybe a
-export const readEnvOr = uncurryN(2, defaultValue => pipe(
-  readEnv,
-  option(defaultValue)
-))
-
-
 // configureStore :: () -> Result Error Redux.Store
 export const configureStore = tryCatch(() => {
-  const env = readEnvOr('development', 'NODE_ENV')
-  const debug = Boolean(readEnvOr(0, 'REACT_APP_DEBUG_STATE'))
+  const env = process.env.NODE_ENV || 'development'
+  const debug = Boolean(process.env.REACT_APP_DEBUG_STATE || 0)
   const reducer = debug
     ? debugReducerDecorator(rootReducer)
     : rootReducer
@@ -40,7 +29,7 @@ export const configureStore = tryCatch(() => {
 
   epicMiddleware.run(rootEpic)
 
-  return store;
+  return store
 })
 
 
@@ -68,3 +57,10 @@ export const start = id => {
 
   return renderApp(storeResult);
 }
+
+
+// epic
+//  :: (Observable State -> Observable Action -> Observable Action) 
+//  -> (Observable Action, Observable State) 
+//  -> Observable Action
+export const epic = compose(flip, uncurryN(2))

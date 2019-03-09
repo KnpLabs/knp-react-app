@@ -1,28 +1,14 @@
-import * as App from './App'
+import { combineEpics } from 'redux-observable'
+import { of } from 'rxjs'
 import { option, either } from 'crocks'
+import { pipe } from 'ramda'
+import * as App from './App'
+import * as o from 'rxjs/operators'
 
 
 beforeAll(() => {
   document.querySelector('body').innerHTML = '<div id="root"></div>'
 })
-
-
-it('can read an env file', () => {
-  const e = App.readEnv('TEST')
-  const a = App.readEnv('NODE_ENV')
-
-  expect(option('not found', e)).toBe('not found')
-  expect(option('not found', a)).toBe(process.env.NODE_ENV)
-});
-
-
-it('can read a end file or return a default value', () => {
-  const e = App.readEnvOr('not found', 'TEST')
-  const a = App.readEnvOr('not found', 'NODE_ENV')
-
-  expect(e).toBe('not found')
-  expect(a).toBe(process.env.NODE_ENV)
-});
 
 
 it('can create a store', () => {
@@ -52,6 +38,28 @@ it('can start the application', () => {
     succ => 'OK',
     appResult
   )
+});
+
+
+it('can create curried and data last epic', () => {
+  // testEpic :: Observable a -> Observable b -> Observable b
+  const testEpic = state$ => pipe(
+    o.withLatestFrom(state$),
+    o.tap(([ action, state ]) => {
+      expect(action).toBe('action')
+      expect(state).toBe('state')
+    }),
+    o.mapTo('OK'),
+  )
+
+  // rootEpic :: (Observable b, Observable a) -> Observable b
+  const rootEpic = combineEpics(
+    App.epic(testEpic),
+  )
+
+  return rootEpic(of('action'), of('state'))
+    .toPromise()
+    .then(d => expect(d).toBe('OK'))
 });
 
 
