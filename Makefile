@@ -1,8 +1,5 @@
-.env:
-	cp .env.dist .env
-
 .PHONY:
-install-deps:
+install:
 	docker-compose run --rm app yarn install
 
 .PHONY:

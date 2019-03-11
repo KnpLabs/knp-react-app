@@ -7,11 +7,8 @@
 # production
 /build
 
-# generated files
-src/**/*.css
-
 # misc
-.env
+.env.local
 
 npm-debug.log*
 yarn-debug.log*

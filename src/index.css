@@ -1,0 +1,10 @@
+/**
+ * Put here any global css (like fonts, or images, or other kinf
+ * of stuff). Try to use the styled components for any specific
+ * styles, it will makes your code more reusable.
+ */
+
+html, body, root {
+  margin: 0;
+  padding: 0;
+}

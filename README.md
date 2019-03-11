@@ -1,8 +1,7 @@
 # KNP React App
 
-This is a bootstrapped React application. If you are looking
-for a Javascript FP starting point for your frontend application, this
-project could be a good start.
+KNP React app is a full packaged solution for building
+functional and reactive frontend application with React.
 
 ## Installation
 
@@ -15,7 +14,7 @@ Just clone this repository and install its dependencies:
 ```bash
 $ git clone git@github.com:KnpLabs/knp-react-app.git myApp
 $ cd myApp
-$ make .env install-deps
+$ make .env install
 ```
 
 Then, run it with
