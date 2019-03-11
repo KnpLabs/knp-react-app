@@ -1,8 +1,10 @@
+import { either } from 'crocks'
+import { identity } from 'ramda'
 import { start } from './Effect/App'
 import './index.css'
 
-
-start('root').either(
+either(
   error => { throw error },
-  succ => succ
+  identity,
+  start('root'),
 )

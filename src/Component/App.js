@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import logo from './Asset/logo.png'
 
-
 export default () => 
   <Fragment>
     <BlackStrip>
@@ -56,26 +55,17 @@ export default () =>
         >
           Styled Components
         </Label>
+        <p>
         Making design is often very painfull: How to organise classes ? How to make reusable components ?
         Should i use id ? Does my classe works with this component ? Where is my fu***** stylesheet ? ...
-        <br />
-        <br />
+        </p>
+        <p>
         Styled components is a very popular and handy tools allowing you make
         designs with (wait for it...) Component.
-        <br/>
-        <br />
+        </p>
+        <p>
         You will love it!
-      </Item>
-
-      <Item>
-        <Label
-          target="_blank"
-          href="https://reacttraining.com/react-router/web/guides/quick-start"
-        >
-          React Router
-        </Label>
-        Any web application need some routing, allowing people to navigate into your app.
-        React Router is the most popular routing tools for react.
+        </p>
       </Item>
 
       <Item>
@@ -136,7 +126,6 @@ export default () =>
     </Menu>
   </Fragment>
 
-
 export const BlackStrip = styled.div`
   max-width: 100vw;
   box-sizing: border-box;
@@ -149,20 +138,17 @@ export const BlackStrip = styled.div`
   box-shadow: 0px 0px 10px #3A3A3A;
 `
 
-
 export const Title = styled.h1`
   text-align: center;
   color: #DCDCDC;
   font-size: 3rem;
 `
 
-
 export const Headline = styled.h2`
   text-align: center;
   color: #737373;
   font-size: 2.5rem;
 `
-
 
 export const SubTitle = styled.p`
   text-align: center;
@@ -173,7 +159,6 @@ export const SubTitle = styled.p`
   opacity: .6;
 `
 
-
 export const QuickAccess = styled.div`
   display: flex;
   max-width: 700px;
@@ -182,7 +167,6 @@ export const QuickAccess = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `
-
 
 export const Thumbnail = styled.a`
   display: flex;
@@ -206,7 +190,6 @@ export const Thumbnail = styled.a`
   margin: 1rem;
 `
 
-
 export const Icon = styled.img`
   display: block;
   width: 100px;
@@ -214,7 +197,6 @@ export const Icon = styled.img`
   margin-bottom: .5rem;
   margin: auto;
 `
-
 
 export const Menu = styled.ul`
   list-style-type: none;
@@ -235,12 +217,10 @@ export const Item = styled.li`
   }
 `
 
-
 export const Link = styled.a`
   color: #7271C8;
   text-decoration: none;
 `
-
 
 export const Label = styled(Link)`
   display: block;

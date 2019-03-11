@@ -7,9 +7,6 @@
 # production
 /build
 
-# generated files
-src/**/*.css
-
 # misc
 .env.local
 

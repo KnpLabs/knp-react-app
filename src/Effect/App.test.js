@@ -5,11 +5,9 @@ import { pipe } from 'ramda'
 import * as App from './App'
 import * as o from 'rxjs/operators'
 
-
 beforeAll(() => {
   document.querySelector('body').innerHTML = '<div id="root"></div>'
 })
-
 
 it('can create a store', () => {
   const storeResult = App.configureStore()
@@ -19,14 +17,12 @@ it('can create a store', () => {
   expect(store.getState).toBeDefined()
 });
 
-
 it('can decorate a reducer for debug purpose', () => {
   const reducer = (state, action) => 'OK'
   const loggableReducer = App.debugReducerDecorator(reducer);
 
   loggableReducer({}, {});
 });
-
 
 it('can start the application', () => {
   const appResult = App.start('root')
@@ -39,7 +35,6 @@ it('can start the application', () => {
     appResult
   )
 });
-
 
 it('can create curried and data last epic', () => {
   // testEpic :: Observable a -> Observable b -> Observable b
@@ -61,7 +56,6 @@ it('can create curried and data last epic', () => {
     .toPromise()
     .then(d => expect(d).toBe('OK'))
 });
-
 
 afterAll(() => {
   document.querySelector('body').innerHTML = ''

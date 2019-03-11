@@ -7,14 +7,12 @@ import App from '../Component/App'
 import React from 'react'
 import rootReducer from '../State'
 
-
 // rootEpic :: (Observable Action, Observable State) -> Observable Action
 export const rootEpic = combineEpics()
 
-
 // configureStore :: () -> Result Error Redux.Store
 export const configureStore = tryCatch(() => {
-  const env = process.env.NODE_ENV || 'development'
+  const env = process.env.NODE_ENV || 'production'
   const debug = Boolean(process.env.REACT_APP_DEBUG_STATE || 0)
   const reducer = debug
     ? debugReducerDecorator(rootReducer)
@@ -32,7 +30,6 @@ export const configureStore = tryCatch(() => {
   return store
 })
 
-
 // debugReducerDecorator :: ((State, Action) -> State) -> (State, Action) -> State
 export const debugReducerDecorator = reducer => (state, action) => {
   console.groupCollapsed(action.type || '')
@@ -47,7 +44,6 @@ export const debugReducerDecorator = reducer => (state, action) => {
   return newState
 }
 
-
 // start :: String -> Result Error Unit
 export const start = id => {
   const storeResult = configureStore()
@@ -57,7 +53,6 @@ export const start = id => {
 
   return renderApp(storeResult);
 }
-
 
 // epic
 //  :: (Observable State -> Observable Action -> Observable Action) 
