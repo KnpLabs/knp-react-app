@@ -1,4 +1,4 @@
-import * as Module from './index'
+import * as Module from '.'
 
 describe('Redux :: Module', () => {
   it('contains the Dog state', () => {

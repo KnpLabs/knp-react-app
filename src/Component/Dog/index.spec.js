@@ -2,8 +2,8 @@ import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import Dog from './index'
-import State from '../../Redux/State'
-import { receiveDog } from '../../Redux/State/Dog'
+import State from '../../Redux/State/Dog'
+import { receiveDog } from '../../Redux/State/Dog/Dog'
 import TestRenderer from 'react-test-renderer'
 
 describe('Component :: Dog :: index', () => {

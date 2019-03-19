@@ -1,5 +1,5 @@
 import { combineEpics, ofType } from 'redux-observable'
-import * as Dog from '../Redux/State/Dog'
+import * as Dog from '../../Redux/State/Card/Card'
 import { mergeMap, map } from 'rxjs/operators'
 import { invoker } from 'ramda'
 

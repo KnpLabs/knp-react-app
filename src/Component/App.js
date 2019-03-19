@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import Dog from './Dog'
+import Card from './Card'
 
 export default ({
   store,
@@ -8,7 +8,7 @@ export default ({
   <Provider store={store}>
     <div>
       <h1>Welcome</h1>
-      <p>This is a simple Dog fetcher app bootstrapped with knp-react-app</p>
-      <Dog />
+      <p>This is a awesome TODO application app bootstrapped with knp-react-app</p>
+      <Card/>
     </div>
   </Provider>
