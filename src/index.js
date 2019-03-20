@@ -5,10 +5,16 @@ import App from './Component/App';
 import registerServiceWorker from './ServiceWorker';
 import { applyMiddleware, createStore } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
-import rootEpic from './Epic/Card'
-import { default as mainReducer, debug } from './Redux/State/Card'
+import rootEpic from './Epic/Actions'
+import { default as mainReducer, debug } from './Redux/State'
 
-const epicMiddleware = createEpicMiddleware();
+
+const epicMiddleware = createEpicMiddleware({
+    dependencies: {
+        fetchDog: () => fetch('https://dog.ceo/api/breeds/image/random'),
+    },
+});
+
 const middleware     = applyMiddleware(epicMiddleware);
 const reducer        = Number(process.env.REACT_APP_DEBUG_STATE)
   ? debug(mainReducer)

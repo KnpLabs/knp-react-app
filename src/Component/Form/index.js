@@ -1,17 +1,16 @@
 import { connect } from 'react-redux'
-import {addCard, setTitle} from '../../Redux/State/Card/Card'
+import {setTitle} from '../../Redux/State/Form/Form'
 import { componentDidMount } from 'react-functional-lifecycle'
 import { compose } from 'ramda'
-import Card from './Card'
+import Form from './Form'
 
 // mapStateToProps :: State -> Props
 const mapStateToProps = state => ({
-  ...state.Card,
+  ...state.Form,
 })
 
 // mapDispatchToProps :: (Action * -> State) -> Props
 const mapDispatchToProps = dispatch => ({
-  addCard: compose(dispatch, addCard),
   setTitle: compose(dispatch, setTitle),
 })
 
@@ -22,7 +21,7 @@ const didMount = ({}) => {}
 const container = connect(mapStateToProps, mapDispatchToProps);
 
 // component :: ReactComponent
-const component = componentDidMount(didMount)(Card);
+const component = componentDidMount(didMount)(Form);
 
 // Card :: ReactComponent
 export default container(component);

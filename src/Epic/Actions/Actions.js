@@ -1,13 +1,12 @@
 import { combineEpics, ofType } from 'redux-observable'
-import * as Card from '../../Redux/State/Card/Card'
-import {tap, ignoreElements, delay, take} from 'rxjs/operators'
+import * as Actions from '../../Redux/State/Actions/Actions'
+import {tap, ignoreElements, delay} from 'rxjs/operators'
 
 
 // addCardEpic :: (Observable Action, Observable State) -> Observable Action
 export const addCardEpic = (action$, state$) => action$.pipe(
-    ofType(Card.ADD_CARD),
-    take(1),
-    delay(100),
+    ofType(Actions.ADD_CARD),
+    delay(0),
     tap(() => {
         document.getElementById('title_form').focus()
     }),
