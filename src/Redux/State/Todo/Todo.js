@@ -19,6 +19,16 @@ export const ADD_CARD = '@knp/Actions/Add'
 // CANCEL_FORM :: String
 export const CANCEL_FORM = '@knp/Form/CancelForm'
 
+// REMOVE_CARD :: String
+export const OPEN_REMOVE_CONFIRMATION = '@knp/Card/OpenRemoveConfirmation'
+
+// openRemoveConfirmation :: () -> Action OPEN_REMOVE_CONFIRMATION
+export const openRemoveConfirmation = event => {
+  return {
+    type: OPEN_REMOVE_CONFIRMATION,
+    cardIndexToRemove: event.target.id
+  }
+}
 
 // addCard :: () -> Action ADD_CARD
 export const addCard = always({ type: ADD_CARD });
@@ -73,5 +83,10 @@ export default createReducer(INITIAL_STATE, {
     ...state,
     isCreating: !hasCanceled,
     currentTitle: hasCanceled ? '' : state.currentTitle,
+  }),
+
+  [OPEN_REMOVE_CONFIRMATION]: (state, {cardIndexToRemove}) => ({
+    ...state,
+    cardIndexToRemove: cardIndexToRemove
   }),
 })

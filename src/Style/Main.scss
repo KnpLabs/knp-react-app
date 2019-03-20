@@ -18,8 +18,10 @@ h1, p {
   }
 
   .card {
-    display: block;
+    display: inline-block;
     border: solid;
-    margin: 20px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
   }
 }

@@ -10,7 +10,7 @@ export default ({
                 }) =>
     <div id="todo">
         {cards.length > 0 && cards.map((card, index) => (
-            <Card key={index} title={card.title}/>
+            <Card key={index} index={index} title={card.title}/>
         ))}
         {isCreating &&
         <Form/>

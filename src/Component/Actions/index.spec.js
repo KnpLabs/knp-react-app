@@ -15,7 +15,7 @@ describe('Component :: Actions :: index', () => {
 
   it('AddCart has been called when click on add button', () => {
     const inspector = TestRenderer.create(createElement(store, Actions));
-    const spy = spyOn(Todo, 'addCard')
+    const spy = spyOn(Todo, 'addCardz')
       console.warn(Todo)
     store.dispatch(Todo.addCard());
     expect(spy).toHaveBeenCalled()

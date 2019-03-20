@@ -1,24 +1,23 @@
 import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import Form from './index'
+import Actions from './index'
 import State from '../../Redux/State'
-import { setTitle } from '../../Redux/State/Todo/Todo'
+import Todo, {openRemoveConfirmation} from '../../Redux/State/Todo/Todo'
 import TestRenderer from 'react-test-renderer'
 
-describe('Component :: Form :: index', () => {
+describe('Component :: Card :: index', () => {
   let store;
 
   beforeEach(() => {
     store = createStore(State, State(), undefined);
   });
 
-  it('SetTitle has been called when user add text into input title_form', () => {
-    TestRenderer.create(createElement(store, Form));
-    const spy = spyOn(store.dispatch, 'setTitle')
+  it('openRemoveConfirmation has been called when click on remove button', () => {
+    TestRenderer.create(createElement(store, Actions));
+    const spy = spyOn(Todo, 'openRemoveConfirmation')
 
-    store.dispatch(setTitle('test'));
-
+    store.dispatch(openRemoveConfirmation());
     expect(spy).toHaveBeenCalled()
   });
 })
