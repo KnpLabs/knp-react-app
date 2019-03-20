@@ -4,7 +4,8 @@ import React from 'react'
 export default ({
                     currentTitle = '',
                     setTitle,
-                    submitForm
+                    submitForm,
+                    cancelForm
                 }) =>
     <div>
         <span>CREATE CARD</span>
@@ -13,6 +14,7 @@ export default ({
                 Title:
                 <input id="title_form"
                        type="text"
+                       onKeyDown={cancelForm}
                        value={currentTitle}
                        onChange={setTitle}/>
             </label>

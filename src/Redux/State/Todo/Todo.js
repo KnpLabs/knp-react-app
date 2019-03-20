@@ -16,9 +16,21 @@ export const SET_TITLE_CARD = '@knp/Form/SetTitle'
 // ADD_CARD :: String
 export const ADD_CARD = '@knp/Actions/Add'
 
+// CANCEL_FORM :: String
+export const CANCEL_FORM = '@knp/Form/CancelForm'
+
 
 // addCard :: () -> Action ADD_CARD
 export const addCard = always({ type: ADD_CARD });
+
+// cancelForm :: () -> Action CANCEL_FORM
+export const cancelForm = event => {
+  return {
+    type: CANCEL_FORM,
+    hasCanceled: event.keyCode === 27
+  }
+}
+
 
 // submitForm :: () -> Action SUBMIT_FORM
 export const submitForm = event => {
@@ -27,6 +39,7 @@ export const submitForm = event => {
     type: SUBMIT_FORM
   }
 }
+
 
 
 // setTitle :: () -> Action SET_TITLE_CARD
@@ -54,5 +67,11 @@ export default createReducer(INITIAL_STATE, {
   [ADD_CARD]: state => ({
     ...state,
     isCreating: true,
+  }),
+
+  [CANCEL_FORM]: (state, {hasCanceled}) => ({
+    ...state,
+    isCreating: !hasCanceled,
+    currentTitle: hasCanceled ? '' : state.currentTitle,
   }),
 })
