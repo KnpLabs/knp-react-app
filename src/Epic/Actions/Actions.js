@@ -13,20 +13,7 @@ export const addCardEpic = (action$, state$) => action$.pipe(
     ignoreElements()
 )
 
-// openRemoveConfirmationEpic :: (Observable Action, Observable State) -> Observable Action
-export const openRemoveConfirmationEpic = (action$, state$) => action$.pipe(
-    ofType(Todo.OPEN_REMOVE_CONFIRMATION),
-    delay(0),
-    tap(() => {
-        if (window.confirm('Are you sure you want to delete this card ?')) {
-            console.log(state$.value.Todo.cardIndexToRemove)
-        }
-    }),
-    ignoreElements()
-)
-
 // Epic :: (Observable Action, Observable State) -> Observable Action
 export default combineEpics(
     addCardEpic,
-    openRemoveConfirmationEpic
 )

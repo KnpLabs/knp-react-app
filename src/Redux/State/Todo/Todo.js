@@ -24,9 +24,15 @@ export const OPEN_REMOVE_CONFIRMATION = '@knp/Card/OpenRemoveConfirmation'
 
 // openRemoveConfirmation :: () -> Action OPEN_REMOVE_CONFIRMATION
 export const openRemoveConfirmation = event => {
+  if (window.confirm('Are you sure you want to delete this card ?')) {
+      return {
+        type: OPEN_REMOVE_CONFIRMATION,
+        cardIndexToRemove: event.target.id
+      }
+  }
   return {
-    type: OPEN_REMOVE_CONFIRMATION,
-    cardIndexToRemove: event.target.id
+      type: OPEN_REMOVE_CONFIRMATION,
+      cardIndexToRemove: null
   }
 }
 
@@ -85,8 +91,10 @@ export default createReducer(INITIAL_STATE, {
     currentTitle: hasCanceled ? '' : state.currentTitle,
   }),
 
-  [OPEN_REMOVE_CONFIRMATION]: (state, {cardIndexToRemove}) => ({
-    ...state,
-    cardIndexToRemove: cardIndexToRemove
-  }),
+  [OPEN_REMOVE_CONFIRMATION]: (state, {cardIndexToRemove}) => {
+    if(cardIndexToRemove >= 0) state.cards.splice(cardIndexToRemove, 1)
+    return {
+      ...state,
+    }
+  },
 })
