@@ -1,5 +1,4 @@
-import Actions from './Actions/Actions'
-import Form from './Form/Form'
+import Todo from './Todo/Todo'
 import { tap, pipe } from 'ramda'
 import { combineReducers } from 'redux'
 
@@ -21,6 +20,5 @@ export const debug = reducer => (state = reducer(), action = {}) => pipe(
 
 // State :: (State, Action *) -> State
 export default combineReducers({
-  Actions,
-  Form,
+  Todo
 })

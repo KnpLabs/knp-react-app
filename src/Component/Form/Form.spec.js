@@ -8,6 +8,6 @@ describe('Component :: Form :: Form', () => {
       <Form />
     );
 
-    expect(() => inspector.root.findByProps({ className: 'creatingCardForm' })).not.toThrow()
+    expect(() => inspector.root.findByProps({ id: 'card_form' })).not.toThrow()
   });
 })

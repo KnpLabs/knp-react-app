@@ -5,7 +5,7 @@ import App from './Component/App';
 import registerServiceWorker from './ServiceWorker';
 import { applyMiddleware, createStore } from 'redux'
 import { createEpicMiddleware } from 'redux-observable'
-import rootEpic from './Epic/Actions'
+import rootEpic from './Epic'
 import { default as mainReducer, debug } from './Redux/State'
 
 

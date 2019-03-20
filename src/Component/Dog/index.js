@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { generateDog } from '../../Redux/State/Card/Card'
+import { generateDog } from '../../Redux/State/Dog/Dog'
 import { componentDidMount } from 'react-functional-lifecycle'
 import { compose } from 'ramda'
 import Dog from './Dog'

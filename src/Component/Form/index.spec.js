@@ -3,7 +3,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import Form from './index'
 import State from '../../Redux/State'
-import { setTitle } from '../../Redux/State/Form/Form'
+import { setTitle } from '../../Redux/State/Todo/Todo'
 import TestRenderer from 'react-test-renderer'
 
 describe('Component :: Form :: index', () => {

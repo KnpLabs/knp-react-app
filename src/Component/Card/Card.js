@@ -2,8 +2,8 @@ import React from 'react'
 
 // Actions :: Props -> React.Component
 export default ({
-                    addCard,
+                    title = '',
                 }) =>
     <div>
-        <button className="add_card" onClick={addCard}>Add another card</button>
+        <span className="card">{title}</span>
     </div>

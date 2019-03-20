@@ -4,7 +4,7 @@ import Todo from './Todo'
 
 // mapStateToProps :: State -> Props
 const mapStateToProps = state => ({
-  ...state.Todo, isCreating: state.Actions.isCreating
+  ...state.Todo,
 })
 
 // didMount :: Props -> *
