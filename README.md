@@ -75,6 +75,5 @@ Please read [this post](https://knplabs.com/en/blog/news-for-our-foss-projects-m
 
 This library is maintained by the following people (alphabetically sorted) :
 - [@Djeg](https://github.com/Djeg)
-- [@nicolasmure](https://github.com/nicolasmure)
+- [@nm2107](https://github.com/nm2107)
 - [@NicolasNSSM](https://github.com/NicolasNSSM)
-
