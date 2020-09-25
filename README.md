@@ -68,3 +68,12 @@ $ make test
 and add the given `script` tag in the `head` tag of the
 [`public/index.html`](/public/index.html) file to automatically import the
 polyfills required by the browser (determined by user agent).
+
+## Maintainers
+
+Please read [this post](https://knplabs.com/en/blog/news-for-our-foss-projects-maintenance) first.
+
+This library is maintained by the following people (alphabetically sorted) :
+- [@Djeg](https://github.com/Djeg)
+- [@nm2107](https://github.com/nm2107)
+- [@NicolasNSSM](https://github.com/NicolasNSSM)
